@@ -22,9 +22,9 @@ module.exports = async function (context, req) {
         }
     })
 
+    //console.log(todaysGames.data.api.games) use a filter to remove games where startTimeUTC > 10
     let games = todaysGames.data.api.games;
     let actualPlay = games.filter((game) => game.startTimeUTC.length > 10)
-
     context.res = {
         status: 200,
         body: actualPlay
